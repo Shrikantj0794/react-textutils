@@ -14,6 +14,12 @@ export default function TextForm(props) {
     setText(lowerCase);
     props.showAlert(" Converted to Lowercase!", "success")
   }
+  const CopyText = ()=>{
+    var text = document.getElementById("myBox");
+    text.select();
+    navigator.clipboard.writeText(text.value)
+    props.showAlert(" copied to Clipboard!", "success")
+  }
     const [text, setText] = useState('');
   return (
     <>
@@ -25,6 +31,7 @@ export default function TextForm(props) {
 
         <button className="btn btn-primary mx-2" onClick={handleUpclick}>Convert to uppercase</button>
         <button className="btn btn-primary mx-2" onClick={handleLoclick}>Convert to uppercase</button>
+        <button className='btn btn-primary mx-2' onClick={ CopyText}>Copy Text</button>
     </div>
     <div className="containr my-3" style={{color: props.mode==='dark'? 'white': 'black'}}>
       <h2>your text summary</h2>
