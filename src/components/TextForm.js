@@ -39,7 +39,7 @@ export default function TextForm(props) {
         <button className="btn btn-primary mx-2" onClick={handleLoclick}>Convert to uppercase</button>
         <button className='btn btn-primary mx-2' onClick={ CopyText}>Copy Text</button>
     </div>
-    <div className="containr my-3" style={{color: props.mode==='dark'? 'white': 'black'}}>
+    <div className="containr my-3 px-5" style={{color: props.mode==='dark'? 'white': 'black'}}>
       <h2>your text summary</h2>
       <p>{text.split(" ").length} words {text.length} characters </p>
       <p>{0.008*text.split(" ").length}Minutes read</p>

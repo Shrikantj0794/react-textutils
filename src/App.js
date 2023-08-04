@@ -1,16 +1,16 @@
 import './App.css';
 import Alert from './components/Alert';
-import About from './components/About';
+// import About from './components/About';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import React, { useState } from 'react'
 
 //import react router
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route
-} from "react-router-dom";
+// import {
+//   BrowserRouter as Router,
+//   Routes,
+//   Route
+// } from "react-router-dom";
 
 
 function App() {
@@ -56,18 +56,21 @@ function App() {
   }
   return (
     <>
-     <Router>
+     {/* <Router> */}
     <Navbar title='TestUtils' mode={mode} toggleMode={toggleMode}/>
     <Alert alert={alert}/>
     <div className="container mx-6 my-3">
    
         {/* In react-router-dom v6, "Switch" is replaced by routes "Routes". */}
-        <Routes>
-          <Route exact path="/" element={<TextForm heading='Enter the text to analyze' mode={mode} showAlert={showAlert}/>}/>
-          <Route exact path="/about" element={<About/>}/>
-        </Routes>
+        {/* <Routes> */}
+          {/* <Route exact path="/" element={<TextForm heading='Enter the text to analyze' mode={mode} showAlert={showAlert}/>}/> */}
+          {/* <Route exact path="/about" element={<About/>}/> */}
+        {/* </Routes> */}
     </div>
-    </Router>
+    {/* </Router> */}
+
+    <TextForm heading='Enter the text to analyze' mode={mode} showAlert={showAlert}/>
+    {/* <About/> */}
    
     </>
   );
