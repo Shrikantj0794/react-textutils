@@ -1,9 +1,17 @@
 import './App.css';
 import Alert from './components/Alert';
-// import About from './components/About';
+import About from './components/About';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import React, { useState } from 'react'
+
+//import react router
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from "react-router-dom";
+
 
 function App() {
   const [mode, setmode] = useState('light');
@@ -29,7 +37,7 @@ function App() {
       //title change
       document.title = 'TextUtils - Dark Mode'
       
-      //cath user attention
+      //flash the title -- (is not a good user experience)
       setInterval(()=>{
         document.title = 'TextUtils is Amazing mode'
       },2000)
@@ -48,12 +56,19 @@ function App() {
   }
   return (
     <>
+     <Router>
     <Navbar title='TestUtils' mode={mode} toggleMode={toggleMode}/>
     <Alert alert={alert}/>
     <div className="container mx-6 my-3">
-    <TextForm heading='Enter the text to analyze' mode={mode} showAlert={showAlert}/>
-    {/* <About/> */}
+   
+        {/* In react-router-dom v6, "Switch" is replaced by routes "Routes". */}
+        <Routes>
+          <Route exact path="/" element={<TextForm heading='Enter the text to analyze' mode={mode} showAlert={showAlert}/>}/>
+          <Route exact path="/about" element={<About/>}/>
+        </Routes>
     </div>
+    </Router>
+   
     </>
   );
 }
