@@ -5,6 +5,8 @@ export default function TextForm(props) {
     let newText = text.toUpperCase();
     setText(newText);
     props.showAlert(" Converted to Uppercase!", "success")
+     //title change
+     document.title = 'TextUtils - Convert To UpperCase'
   }
   const handleOnChange = (event)=>{
     setText(event.target.value)
@@ -13,12 +15,16 @@ export default function TextForm(props) {
     let lowerCase = text.toLowerCase();
     setText(lowerCase);
     props.showAlert(" Converted to Lowercase!", "success")
+    //title change
+    document.title = 'TextUtils - Convert To LowerCase'
   }
   const CopyText = ()=>{
     var text = document.getElementById("myBox");
     text.select();
     navigator.clipboard.writeText(text.value)
     props.showAlert(" copied to Clipboard!", "success")
+    //title change
+    document.title = 'TextUtils - Copy'
   }
     const [text, setText] = useState('');
   return (
