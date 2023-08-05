@@ -35,15 +35,15 @@ function App() {
       //Alert msg
       showAlert(" Dark mode has been enabled", "success")
       //title change
-      document.title = 'TextUtils - Dark Mode'
+      // document.title = 'TextUtils - Dark Mode'
       
       //flash the title -- (is not a good user experience)
-      setInterval(()=>{
-        document.title = 'TextUtils is Amazing mode'
-      },2000)
-      setInterval(()=>{
-        document.title = 'Install TextUtils Now'
-      },1500)
+      // setInterval(()=>{
+      //   document.title = 'TextUtils is Amazing mode'
+      // },2000)
+      // setInterval(()=>{
+      //   document.title = 'Install TextUtils Now'
+      // },1500)
     }
     else{
       setmode("light");
@@ -51,7 +51,7 @@ function App() {
       //Alert msg
       showAlert(" lignt mode has been enabled", "success")
        //title change
-       document.title = 'TextUtils - Light Mode'
+      //  document.title = 'TextUtils - Light Mode'
     }  
   }
   return (
