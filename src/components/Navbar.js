@@ -1,25 +1,25 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-// import { Link } from 'react-router-dom' 
+import { Link } from 'react-router-dom' 
 
 export default function Navbar(props) {
   return (
     <div>
       <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
   <div className="container-fluid">
-    <a className="navbar-brand" href="/">{props.title}</a>
+    {/* <a className="navbar-brand" href="/">{props.title}</a> */}
     {/* when we use a inplace of Link and href inplace of to your page will work but it will start reloading which we dont wantwe want our website to be this fast. and also our page should not reload. */}    
-    {/* <Link className="navbar-brand" to="/">{props.title}</Link> */}
+    <Link className="navbar-brand" to="/">{props.title}</Link>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
     </button>
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
         <li className="nav-item">
-          <a className="nav-link active" aria-current="page" href="/">Home</a>
+          <Link className="nav-link active" aria-current="page" to="/">Home</Link>
           </li>
         <li className="nav-item">
-          <a className="nav-link" href="/about">about</a>
+          <Link className="nav-link" to="/about">about</Link>
         </li>
       </ul>
       {/* <form className="d-flex" role="search">
